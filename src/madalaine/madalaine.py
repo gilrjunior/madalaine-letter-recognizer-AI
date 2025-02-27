@@ -21,14 +21,10 @@ class Madalaine:
 
         entries= []
 
-        for i in range(1,4):
-            entries.append(np.array(globals()[f"get_A{i}"]()).flatten())
-            entries.append(np.array(globals()[f"get_B{i}"]()).flatten())
-            entries.append(np.array(globals()[f"get_C{i}"]()).flatten())
-            entries.append(np.array(globals()[f"get_D{i}"]()).flatten())
-            entries.append(np.array(globals()[f"get_E{i}"]()).flatten())
-            entries.append(np.array(globals()[f"get_J{i}"]()).flatten())
-            entries.append(np.array(globals()[f"get_K{i}"]()).flatten())
+        for i in range(1, 4):
+            for var in ["A", "B", "C", "D", "E", "J", "K"]:
+                array = np.array(globals()[f"get_{var}{i}"]()).flatten()
+                entries.append(array)
 
         (n_patterns, n_entries) = np.shape(entries)
 
@@ -92,13 +88,13 @@ class Madalaine:
 
                 for m in range(n_entries):
                     for n in range(n_outs):
-                        self.v[m][n] = last_v[m][n] + self.learn_rate * (targets[k][n] - y[n]) * letter[m]
+                        self.v[m][n] = last_v[m][n] + self.learn_rate * (targets[n][k] - y[n]) * letter[m]
 
 
                 last_v0 = self.v0
 
                 for j in range(n_outs):
-                    self.v0[j] = last_v0[j] + self.learn_rate*(targets[k][j]-y[j])
+                    self.v0[j] = last_v0[j] + self.learn_rate*(targets[j][k]-y[j])
 
                 k = k + 1
 
