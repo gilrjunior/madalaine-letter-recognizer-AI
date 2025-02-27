@@ -88,13 +88,13 @@ class Madalaine:
 
                 for m in range(n_entries):
                     for n in range(n_outs):
-                        self.v[m][n] = last_v[m][n] + self.learn_rate * (targets[n][k] - y[n]) * letter[m]
+                        self.v[m][n] = last_v[m][n] + self.learn_rate * (targets[k][n] - y[n]) * letter[m]
 
 
                 last_v0 = self.v0
 
                 for j in range(n_outs):
-                    self.v0[j] = last_v0[j] + self.learn_rate*(targets[j][k]-y[j])
+                    self.v0[j] = last_v0[j] + self.learn_rate*(targets[k][j]-y[j])
 
                 k = k + 1
 
