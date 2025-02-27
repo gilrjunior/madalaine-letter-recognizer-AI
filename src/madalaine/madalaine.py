@@ -41,12 +41,12 @@ class Madalaine:
 
         for i in range(n_entries):
             for j in range(n_outs):
-                self.v[i][j] = rd.uniform(-0.1, 0.1)
+                self.v[i][j] = rd.uniform(-0.5, 0.5)
 
         self.v0 = np.zeros((n_outs))
 
         for j in range(n_outs):
-                self.v0[j] = rd.uniform(-0.1, 0.1)
+                self.v0[j] = rd.uniform(-0.5, 0.5)
 
         yin = np.zeros((n_outs, 1))
         y = np.zeros((n_outs, 1))
