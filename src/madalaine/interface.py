@@ -166,10 +166,10 @@ def interface():
                      command=lambda: start_model(matrix, madalaine, letter_text_label))
     v_btn.grid(row=16, column=0, columnspan=3, padx=5, pady= 10, sticky="w")
 
-    letter_label = ttk.Label(bottom_frm, text="Letra", anchor="center", width=13)
+    letter_label = ttk.Label(bottom_frm, text="Letra", anchor="center", width=15)
     letter_label.grid(row=17, column=0, padx=5, pady=5, sticky="w")
 
-    letter_text_label = ttk.Label(bottom_frm, text="?", font=("Arial", 12, "bold"), anchor="center", width=13)
+    letter_text_label = ttk.Label(bottom_frm, text="?", font=("Arial", 12, "bold"), anchor="center", width=15)
     letter_text_label.grid(row=18, column=0, padx=5, pady=5, sticky="w")
 
     root.mainloop()

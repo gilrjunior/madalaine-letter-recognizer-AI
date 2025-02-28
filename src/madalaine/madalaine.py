@@ -140,10 +140,14 @@ class Madalaine:
             else:
                 y[j] = 0
         
-        value = tuple(np.array(y).flatten().astype(int))
-        enum = Letter(value)
         
-        return enum.name
+        
+        try:
+            value = tuple(np.array(y).flatten().astype(int))
+            enum = Letter(value)
+            return enum.name
+        except:
+            return "Não Identificada"
 
 
     def set_condition(self, condition):
