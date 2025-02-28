@@ -5,7 +5,7 @@ from targets import *
 from letters_enum import *
 import matplotlib.pyplot as plt
 
-class Madalaine:
+class Madaline:
 
 
     def __init__(self, learn_rate, option_data):

@@ -1,16 +1,16 @@
 from tkinter import *
 from tkinter import ttk
 from controller import *
-from madalaine import Madalaine
+from madalaine import Madaline
 
 def interface():
 
-    madalaine = Madalaine(0.0, [[],[]])
+    madaline = Madaline(0.0, [[],[]])
 
     geometry = "600x700"
 
     root = Tk()
-    root.title("Madalaine")
+    root.title("Madaline")
     root.geometry(geometry)
     root.configure(bg="#F0F0F0")
 
@@ -109,7 +109,7 @@ def interface():
     btn = ttk.Button(trn_frm,
                      text="Treinar",
                      style="Red.TButton",
-                     command=lambda: start_training(learn_rate_entry, [option_cb, option_entry], madalaine),
+                     command=lambda: start_training(learn_rate_entry, [option_cb, option_entry], madaline),
                      width=20)
     btn.grid(row=3, column=0, columnspan=2, padx=5, pady=20, sticky="w")
 
@@ -163,7 +163,7 @@ def interface():
                      text="Identificar Letra",
                      style="Red.TButton",
                      width=20,
-                     command=lambda: start_model(matrix, madalaine, letter_text_label))
+                     command=lambda: start_model(matrix, madaline, letter_text_label))
     v_btn.grid(row=16, column=0, columnspan=3, padx=5, pady= 10, sticky="w")
 
     letter_label = ttk.Label(bottom_frm, text="Letra", anchor="center", width=15)
